@@ -9,25 +9,31 @@ exports.create=(req, res)=>{
     }
 
     // new user
-    const user=new Userdb({
-        name:req.body.name,
-        email:req.body.email,
-        gender: req.body.gender,
-        status:req.body.status
-    })
-    // save user in the database
-    user
-    .save(user)
-    .then(data =>{
-        // res.send(data)
+    // const user=new Userdb({
+    //     name:req.body.name,
+    //     email:req.body.email,
+    //     gender: req.body.gender,
+    //     status:req.body.status
+    // })
+    // // save user in the database
+    // user
+    // .save(user)
+    // .then(data =>{
+    //     // res.send(data)
+    //     res.redirect('/')
+    // })
+    // .catch(err =>{
+    //     res.status(500).send({
+    //     message: err.message || "Some error occurred while creatingacreate operation"
+    //     });
+    // }); 
+      let newUser=new Userdb(req.body)
+    try{
+        newUser.save()  
         res.redirect('/')
-    })
-    .catch(err =>{
-        res.status(500).send({
-        message: err.message || "Some error occurred while creatingacreate operation"
-        });
-    }); 
-                             
+    }catch{
+        res.status(500).send('Error')
+    }                         
 }
       
 
