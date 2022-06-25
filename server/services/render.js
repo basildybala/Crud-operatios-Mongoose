@@ -12,14 +12,19 @@ let controller=require("../controller/controller")
 
 exports.homeRoutes = (req, res) => {
   // Makeaget request to /api/users
-    axios.get('http://localhost:3000/api/users')
-    .then(function(response){
+    // axios.get('http://localhost:3000/api/users')
+    // .then(function(response){
       
-      res.render('index', {users: response.data })
-    }) 
-    .catch(err =>{
-      res.send(err);
-    })  
+    //   res.render('index', {users: response.data })
+    // }) 
+    // .catch(err =>{
+    //   res.send(err);
+    // })  
+  //   for(let i=0; i<10; i++){
+  //     setTimeout(function() {console.log("AA")}, 2000)
+  //  }
+
+   
 };
 
 exports.add_user = (req, res) => {
