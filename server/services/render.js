@@ -20,9 +20,44 @@ exports.homeRoutes = (req, res) => {
     // .catch(err =>{
     //   res.send(err);
     // })  
-  //   for(let i=0; i<10; i++){
-  //     setTimeout(function() {console.log("AA")}, 2000)
-  //  }
+    let arr=[1,2,3,4,5,6]
+  
+    console.log('started');
+
+    const myFunc=(value)=>{
+       return new Promise(async(resolve,reject)=>{
+          setTimeout(()=>{
+            resolve (console.log(value))
+          },2000)
+        })
+    }
+    const myFunction=(value)=>{
+       return new Promise(async(resolve,reject)=>{
+          setTimeout(()=>{
+            resolve (console.log(value))
+          },2000)
+        })
+    }
+    // let promise= myFunc()
+
+    myFunc(12).then((a)=>{
+      console.log(a);  
+    })
+
+    // arr.forEach((value)=>{
+    //   console.log(value);
+    // })
+    // for(let i=0; i<10; i++){
+    //   // function ab(cb){
+    //   //   cb(console.log("hai"))
+    //   // }
+      
+    //  console.log(i);
+    // }
+    // ab((cb=>{
+    //   console.log(cb);
+    // }))
+   console.log('end');
 
    
 };
